@@ -1,0 +1,220 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&family=Quicksand:wght@400;500;600;700&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  padding: 40px 18px;
+  font-family: 'Nunito', sans-serif;
+  color: #554455;
+  background:
+    radial-gradient(circle at 10% 15%, #ffe0eb 0, transparent 30%),
+    radial-gradient(circle at 90% 85%, #e5ddff 0, transparent 32%),
+    #fff8fb;
+}
+
+.container {
+  width: 100%;
+  max-width: 520px;
+  margin: 20px auto;
+}
+
+/* RSVP form card */
+
+.rsvp-form {
+  position: relative;
+  padding: 38px;
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid #f5dce8;
+  border-radius: 26px;
+  box-shadow: 0 14px 40px rgba(170, 112, 147, 0.13);
+}
+
+.rsvp-form::before {
+  content: "♡";
+  display: block;
+  margin-bottom: 12px;
+  color: #e58baa;
+  text-align: center;
+  font-size: 36px;
+  line-height: 1;
+}
+
+.rsvp-form::after {
+  content: "You're invited!";
+  display: block;
+  margin-bottom: 28px;
+  color: #bd7194;
+  text-align: center;
+  font-family: 'Quicksand', sans-serif;
+  font-size: 27px;
+  font-weight: 700;
+}
+
+/* Form fields */
+
+.section {
+  margin-bottom: 21px;
+}
+
+.section label {
+  display: block;
+  margin-bottom: 8px;
+  color: #70576c;
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.section input:not([type="checkbox"]) {
+  width: 100%;
+  min-height: 46px;
+  padding: 12px 14px;
+  border: 1.5px solid #eedde8;
+  border-radius: 12px;
+  outline: none;
+  background: #fffafd;
+  color: #554455;
+  font: inherit;
+  transition: border-color 0.2s, box-shadow 0.2s, background 0.2s;
+}
+
+.section input:not([type="checkbox"]):focus {
+  border-color: #d78bb0;
+  background: #ffffff;
+  box-shadow: 0 0 0 4px rgba(215, 139, 176, 0.15);
+}
+
+.section input::placeholder {
+  color: #c2adbd;
+}
+
+/* Guest checkbox */
+
+.section:has(input[type="checkbox"]) {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px;
+  border-radius: 13px;
+  background: #fff3f8;
+}
+
+.section:has(input[type="checkbox"]) label {
+  margin: 0;
+  cursor: pointer;
+}
+
+.section input[type="checkbox"] {
+  width: 19px;
+  height: 19px;
+  margin: 0;
+  accent-color: #d77fa5;
+  cursor: pointer;
+}
+
+/* Submit button */
+
+.rsvp-form button {
+  width: 100%;
+  margin-top: 5px;
+  padding: 14px 20px;
+  border: none;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #e99cba, #c6a5ef);
+  color: #ffffff;
+  font-family: 'Nunito', sans-serif;
+  font-size: 16px;
+  font-weight: 800;
+  cursor: pointer;
+  box-shadow: 0 6px 15px rgba(194, 133, 181, 0.22);
+  transition: transform 0.2s, box-shadow 0.2s, filter 0.2s;
+}
+
+.rsvp-form button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 9px 20px rgba(194, 133, 181, 0.3);
+  filter: saturate(1.1);
+}
+
+.rsvp-form button:active {
+  transform: translateY(0);
+}
+
+/* Submission confirmation */
+
+.result-box {
+  position: relative;
+  margin-top: 25px;
+  padding: 28px;
+  border: 1px solid #d9c9f5;
+  border-radius: 22px;
+  background: linear-gradient(145deg, #fff, #faf5ff);
+  box-shadow: 0 12px 30px rgba(144, 112, 181, 0.12);
+  animation: appear 0.35s ease-out;
+}
+
+.result-box::before {
+  content: "✿";
+  position: absolute;
+  top: 18px;
+  right: 22px;
+  color: #b69ae4;
+  font-size: 26px;
+}
+
+.result-box h2 {
+  margin: 0 0 20px;
+  padding-bottom: 14px;
+  border-bottom: 1px dashed #d9c9f5;
+  color: #8f6bb8;
+  font-family: 'Quicksand', sans-serif;
+  font-size: 24px;
+}
+
+.result-box p {
+  margin: 12px 0;
+  padding: 10px 12px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.8);
+  color: #65546b;
+  font-size: 14px;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Mobile layout */
+
+@media (max-width: 480px) {
+  body {
+    padding: 18px 12px;
+  }
+
+  .container {
+    margin: 10px auto;
+  }
+
+  .rsvp-form {
+    padding: 28px 22px;
+    border-radius: 21px;
+  }
+
+  .result-box {
+    padding: 23px 18px;
+  }
+}
